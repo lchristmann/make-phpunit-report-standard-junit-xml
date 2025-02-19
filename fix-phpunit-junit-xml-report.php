@@ -4,7 +4,7 @@
  * This script transforms a PHPUnit JUnit XML report by:
  * 1. Moving attributes from the first all-wrapping <testsuite> to the <testsuites> element.
  * 2. Flattening the third level of <testsuite> elements by moving their <testcase> elements up one level.
- * 3. Removing now-empty <testsuite> elements.
+ * 3. Renaming the "class" attribute to "classname" on all <testcase> elements.
  *
  * The script accepts two mandatory parameters:
  * - input file path (relative or absolute)
@@ -103,6 +103,17 @@ function flattenTestSuite(DOMElement $suite)
 foreach ($testsuitesElem->childNodes as $child) {
     if ($child->nodeType === XML_ELEMENT_NODE && $child->nodeName === 'testsuite') {
         flattenTestSuite($child);
+    }
+}
+
+// ===== STEP 3: Rename "class" attribute to "classname" in all <testcase> elements =====
+$xpath = new DOMXPath($dom);
+$testcaseNodes = $xpath->query('//testcase');
+
+foreach ($testcaseNodes as $testcase) {
+    if ($testcase->hasAttribute('class')) {
+        $testcase->setAttribute('classname', $testcase->getAttribute('class'));
+        $testcase->removeAttribute('class');
     }
 }
 

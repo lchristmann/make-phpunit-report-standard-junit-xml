@@ -3,6 +3,7 @@
     <!-- TODO: remove this all-wrapping <testsuite> and put its properties on above <testsuites> element -->
     <testsuite name="Tests/Unit/PHP" tests="138" assertions="172" failures="0" errors="0" time="0.077931">
         <testsuite name="Tests\Unit\PHP\Test1" file="/path/Tests/Unit/PHP/Test1.php" tests="2" assertions="18" failures="0" errors="0" time="0.018584">
+            <!-- TODO: rename all class properties on testcase elements like below to classname -->
             <testcase name="test1" class="Tests\Unit\PHP\Test1" file="/path/Tests/Unit/PHP/Test1.php" line="16" assertions="12" time="0.015141"/>
             <testcase name="test2" class="Tests\Unit\PHP\Test1" file="/path/Tests/Unit/PHP/Test1.php" line="54" assertions="6" time="0.003443"/>
         </testsuite>

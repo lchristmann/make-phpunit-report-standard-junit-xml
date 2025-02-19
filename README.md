@@ -5,6 +5,8 @@ PHPUnit's JUnit test reports often cause problems, because they deviate from the
 - nested `<testsuite>` elements
 - calling the `classname` property on `<testcase>` elements "`class`" instead
 
+I've marked those issues in the `phpunit-junit-xml-report.xml` with TODO comments.
+
 My personal use case is BrowserStack Test Observability failing to process my XML report from PHPUnit.
 
 But there's also been a [GitLab issue in 2018](https://gitlab.com/gitlab-org/gitlab-foss/-/issues/50959) for this problem.
