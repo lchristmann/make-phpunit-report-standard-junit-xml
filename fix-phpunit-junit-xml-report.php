@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This script transforms a PHPUnit JUnit XML report by:
+ * This script transforms a PHPUnit JUnit XML into a standard JUnit XML report by:
  * 1. Moving attributes from the first all-wrapping <testsuite> to the <testsuites> element.
  * 2. Flattening the third level of <testsuite> elements by moving their <testcase> elements up one level.
  * 3. Renaming the "class" attribute to "classname" on all <testcase> elements.
