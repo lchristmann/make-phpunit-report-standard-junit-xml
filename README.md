@@ -48,7 +48,7 @@ Windows: (adapt path to project!)
 docker run --rm --volume C:\path\to\project:/app --workdir /app php:8.2-cli php fix-phpunit-junit-xml-report.php phpunit-junit-xml-report.xml fixed-junit.xml
 ```
 
-- `--rm` makes it that the container is removed after it's done (the `fixed-junit.xml` will still be there though, beucase...)
+- `--rm` makes it that the container is removed after it's done (the `fixed-junit.xml` will still be there though, because...)
 - ...`--volume` syncs your current working directory with the containers app directory (be sure you're in this project's directory here with your shell!)
 - `--workdir /app` sets the container's working directory (it's where we mounted our volume, so this project's files are there!)
 - `bash -c "..."` [executes the given string as a command](https://www.reddit.com/r/docker/comments/10ng7hd/what_is_the_purpose_of_bash_c/)
